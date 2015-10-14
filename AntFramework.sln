@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Log4Net", "Ant.Log4Net\Ant.Log4Net.csproj", "{D4F18225-F32B-4E1A-BE9A-2B0E875C8ACD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Memcache", "Ant.Memcache\Ant.Memcache.csproj", "{93D785D5-2C2D-4A4B-A987-E337A9A6AF7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.UnitTest", "Ant.UnitTest\Ant.UnitTest.csproj", "{B94E4764-F26A-4963-B0FD-5D94443BC88A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4F18225-F32B-4E1A-BE9A-2B0E875C8ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F18225-F32B-4E1A-BE9A-2B0E875C8ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F18225-F32B-4E1A-BE9A-2B0E875C8ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4F18225-F32B-4E1A-BE9A-2B0E875C8ACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D785D5-2C2D-4A4B-A987-E337A9A6AF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D785D5-2C2D-4A4B-A987-E337A9A6AF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D785D5-2C2D-4A4B-A987-E337A9A6AF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D785D5-2C2D-4A4B-A987-E337A9A6AF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B94E4764-F26A-4963-B0FD-5D94443BC88A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94E4764-F26A-4963-B0FD-5D94443BC88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94E4764-F26A-4963-B0FD-5D94443BC88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94E4764-F26A-4963-B0FD-5D94443BC88A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
