@@ -1,12 +1,8 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Ant.UnitTest
 {
-    using Ant.Log4Net;
+    using Log4Net;
 
     /// <summary>
     /// AntLog4NetUnitTest 的摘要说明

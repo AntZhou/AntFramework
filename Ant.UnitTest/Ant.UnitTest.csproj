@@ -58,6 +58,7 @@
     <Compile Include="AntMemcacheUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AttributeTest.cs" />
+    <Compile Include="XmlDatabaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ant.Log4Net\Ant.Log4Net.csproj">
@@ -67,6 +68,10 @@
     <ProjectReference Include="..\Ant.Memcache\Ant.Memcache.csproj">
       <Project>{93d785d5-2c2d-4a4b-a987-e337a9a6af7e}</Project>
       <Name>Ant.Memcache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ant.XmlDatabase\Ant.XmlDatabase.csproj">
+      <Project>{5e811945-968e-4350-a669-43a9304c5cb0}</Project>
+      <Name>Ant.XmlDatabase</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
