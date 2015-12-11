@@ -31,9 +31,19 @@ namespace Ant.Core
             int result;
             if (!int.TryParse(str, out result))
             {
-                throw new ArgumentOutOfRangeException(string.Format("{0}无法转化为int类型", str));
+                throw new ArgumentOutOfRangeException($"{str}无法转化为int类型");
             }
             return result;
+        }
+
+        /// <summary>
+        ///     是否为空
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static bool IsNullOrEmpty(this string str)
+        {
+            return string.IsNullOrEmpty(str);
         }
 
         /// <summary>

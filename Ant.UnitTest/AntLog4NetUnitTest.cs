@@ -53,5 +53,11 @@ namespace Ant.UnitTest
             LogHelper.Warn(this, "Warn");
             Assert.AreEqual(1, 1);
         }
+
+        [TestMethod]
+        public void DbLogTest()
+        {
+            
+        }
     }
 }
