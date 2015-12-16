@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Gobang.WPF.GobangCellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Gobang.WPF"
+             xmlns:converter="clr-namespace:Sudoku.WPF.Converter;assembly=Sudoku.WPF"
+             mc:Ignorable="d" SizeChanged="GobangCell_OnSizeChanged" MouseEnter="UserControlMouseEnter"
+             MouseLeave="UserControlMouseLeave" >
+    <UserControl.Resources>
+        <converter:VisibleConverter x:Key="VisibilityConverter" />
+        <local:ZeroPontNineTimeConverter x:Key="ZeroPontNineTimeConverter" />
+        <local:ColorToBrushConverter x:Key="ColorToBrushConverter" />
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <local:GobangCellViewModel x:Name="ViewModel" />
+    </UserControl.DataContext>
+    <Grid>
+        <Grid x:Name="BaseGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Row="0" Grid.Column="1" Fill="Black"
+                       Visibility="{Binding Path=IsNotFirstRow, Converter= {StaticResource VisibilityConverter}}" />
+            <Rectangle Grid.Row="1" Grid.Column="0" Fill="Black"
+                       Visibility="{Binding Path=IsNotFirstColumn, Converter= {StaticResource VisibilityConverter}}" />
+            <Rectangle Grid.Row="1" Grid.Column="1" Fill="Black" />
+            <Rectangle Grid.Row="1" Grid.Column="2" Fill="Black"
+                       Visibility="{Binding Path=IsNotLastColumn, Converter= {StaticResource VisibilityConverter}}" />
+            <Rectangle Grid.Row="2" Grid.Column="1" Fill="Black"
+                       Visibility="{Binding Path=IsNotLastRow, Converter= {StaticResource VisibilityConverter}}" />
+            <Ellipse x:Name="ChessEllipse" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3"
+                     Stroke="{Binding Path=ChessColor,Converter={StaticResource ColorToBrushConverter}}"
+                     Fill="{Binding Path=ChessColor,Converter={StaticResource ColorToBrushConverter}}"
+                     Visibility="{Binding Path=ChessVisible, Converter={StaticResource VisibilityConverter}}"
+                     HorizontalAlignment="Center"
+                     Height="{Binding ElementName=BaseGrid,Path=ActualHeight,Converter={StaticResource ZeroPontNineTimeConverter}}"
+                     VerticalAlignment="Center"
+                     Width="{Binding ElementName=BaseGrid,Path=ActualHeight,Converter={StaticResource ZeroPontNineTimeConverter}}" />
+
+        </Grid>
+    </Grid>
+</UserControl>

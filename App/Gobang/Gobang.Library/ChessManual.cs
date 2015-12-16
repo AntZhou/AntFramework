@@ -1,4 +1,4 @@
-﻿namespace SudokuHelper.Library.Model
+﻿namespace Gobang.Library
 {
     using System.Collections.Generic;
     using System.Linq;

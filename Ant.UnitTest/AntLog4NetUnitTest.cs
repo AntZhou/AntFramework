@@ -1,27 +1,39 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Ant.UnitTest
+﻿namespace Ant.UnitTest
 {
-    using Log4Net;
+    using Ant.Log4Net;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
-    /// AntLog4NetUnitTest 的摘要说明
+    ///     AntLog4NetUnitTest 的摘要说明
     /// </summary>
     [TestClass]
     public class AntLog4NetUnitTest
     {
-        public AntLog4NetUnitTest()
-        {
-
-        }
-
         /// <summary>
-        ///获取或设置测试上下文，该上下文提供
-        ///有关当前测试运行及其功能的信息。
-        ///</summary>
+        ///     获取或设置测试上下文，该上下文提供
+        ///     有关当前测试运行及其功能的信息。
+        /// </summary>
         public TestContext TestContext { get; set; }
 
+        [TestMethod]
+        public void LogTest()
+        {
+            LogHelper.Debug(this, "Debug");
+            LogHelper.Error(this, "Error");
+            LogHelper.Fatal(this, "Fatal");
+            LogHelper.Info(this, "Info");
+            LogHelper.Warn(this, "Warn");
+            Assert.AreEqual(1, 1);
+        }
+
+        [TestMethod]
+        public void DbLogTest()
+        {
+        }
+
         #region 附加测试特性
+
         //
         // 编写测试时，可以使用以下附加特性: 
         //
@@ -41,23 +53,7 @@ namespace Ant.UnitTest
         // [TestCleanup()]
         // public void MyTestCleanup() { }
         //
+
         #endregion
-
-        [TestMethod]
-        public void LogTest()
-        {
-            LogHelper.Debug(this, "Debug");
-            LogHelper.Error(this, "Error");
-            LogHelper.Fatal(this, "Fatal");
-            LogHelper.Info(this, "Info");
-            LogHelper.Warn(this, "Warn");
-            Assert.AreEqual(1, 1);
-        }
-
-        [TestMethod]
-        public void DbLogTest()
-        {
-            
-        }
     }
 }

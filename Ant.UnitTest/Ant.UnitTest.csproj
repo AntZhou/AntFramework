@@ -67,24 +67,24 @@
     <Compile Include="XmlDatabaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ant.Log4Net\Ant.Log4Net.csproj">
-      <Project>{d4f18225-f32b-4e1a-be9a-2b0e875c8acd}</Project>
-      <Name>Ant.Log4Net</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ant.Memcache\Ant.Memcache.csproj">
-      <Project>{93d785d5-2c2d-4a4b-a987-e337a9a6af7e}</Project>
-      <Name>Ant.Memcache</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ant.XmlDatabase\Ant.XmlDatabase.csproj">
-      <Project>{5e811945-968e-4350-a669-43a9304c5cb0}</Project>
-      <Name>Ant.XmlDatabase</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="LogConfig\Log4Net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Ant.Log4Net\Ant.Log4Net.csproj">
+      <Project>{d4f18225-f32b-4e1a-be9a-2b0e875c8acd}</Project>
+      <Name>Ant.Log4Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\Ant.Memcache\Ant.Memcache.csproj">
+      <Project>{93d785d5-2c2d-4a4b-a987-e337a9a6af7e}</Project>
+      <Name>Ant.Memcache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\Ant.XmlDatabase\Ant.XmlDatabase.csproj">
+      <Project>{5e811945-968e-4350-a669-43a9304c5cb0}</Project>
+      <Name>Ant.XmlDatabase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

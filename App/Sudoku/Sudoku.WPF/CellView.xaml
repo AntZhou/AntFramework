@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Sudoku.WPF.CellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Sudoku.WPF"
+             xmlns:converter="clr-namespace:Sudoku.WPF.Converter"
+             SizeChanged="CellView_OnSizeChanged"
+             mc:Ignorable="d"
+             KeyUp="CellView_OnKeyUp" Focusable="True"
+             >
+    <UserControl.Resources>
+        <Style x:Key="NumberStyle" TargetType="TextBlock">
+            <Setter Property="TextBlock.FontSize" Value="{Binding Path=SmallFontSize}" />
+            <Setter Property="TextBlock.HorizontalAlignment" Value="Center" />
+            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+        </Style>
+        <converter:VisibleConverter x:Key="VisibilityConverter" />
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <local:CellViewModel x:Name="ViewModel" />
+    </UserControl.DataContext>
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1">
+            <Grid x:Name="CellGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="TextBlock1" Grid.Row="0" Grid.Column="0" Text="1"
+                           Style="{StaticResource NumberStyle}"
+                           Visibility="{Binding Path=Number1Visible ,Converter={StaticResource VisibilityConverter}}" />
+                <TextBlock x:Name="TextBlock2" Grid.Row="0" Grid.Column="1" Text="2"
+                           Style="{StaticResource NumberStyle}"
+                           Visibility="{Binding Path=Number2Visible ,Converter={StaticResource VisibilityConverter}}" />
+                <TextBlock x:Name="TextBlock3" Grid.Row="0" Grid.Column="2" Text="3"
+                           Style="{StaticResource NumberStyle}"
+                           Visibility="{Binding Path=Number3Visible ,Converter={StaticResource VisibilityConverter}}" />
+                <TextBlock x:Name="TextBlock4" Grid.Row="1" Grid.Column="0" Text="4"
+                           Style="{StaticResource NumberStyle}"
+                           Visibility="{Binding Path=Number4Visible ,Converter={StaticResource VisibilityConverter}}" />
+                <TextBlock x:Name="TextBlock5" Grid.Row="1" Grid.Column="1" Text="5"
+                           Style="{StaticResource NumberStyle}"
+                           Visibility="{Binding Path=Number5Visible ,Converter={StaticResource VisibilityConverter}}" />
+                <TextBlock x:Name="TextBlock6" Grid.Row="1" Grid.Column="2" Text="6"
+                           Style="{StaticResource NumberStyle}"
+                           Visibility="{Binding Path=Number6Visible ,Converter={StaticResource VisibilityConverter}}" />
+                <TextBlock x:Name="TextBlock7" Grid.Row="2" Grid.Column="0" Text="7"
+                           Style="{StaticResource NumberStyle}"
+                           Visibility="{Binding Path=Number7Visible ,Converter={StaticResource VisibilityConverter}}" />
+                <TextBlock x:Name="TextBlock8" Grid.Row="2" Grid.Column="1" Text="8"
+                           Style="{StaticResource NumberStyle}"
+                           Visibility="{Binding Path=Number8Visible ,Converter={StaticResource VisibilityConverter}}" />
+                <TextBlock x:Name="TextBlock9" Grid.Row="2" Grid.Column="2" Text="9"
+                           Style="{StaticResource NumberStyle}"
+                           Visibility="{Binding Path=Number9Visible ,Converter={StaticResource VisibilityConverter}}" />
+                <TextBlock x:Name="TextNumber" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3"
+                           Text="{Binding Path=Number}" FontSize="{Binding Path=Size }"
+                           TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Visibility="{Binding Path=NumberVisible ,Converter={StaticResource VisibilityConverter}}" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

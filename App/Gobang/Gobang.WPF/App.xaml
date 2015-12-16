@@ -1,0 +1,9 @@
+﻿<Application x:Class="Gobang.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Gobang.WPF"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <SolidColorBrush Color="Bisque" x:Key="ChessBoardSolidColorBrush"></SolidColorBrush>
+    </Application.Resources>
+</Application>
