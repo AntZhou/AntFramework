@@ -1,4 +1,4 @@
-﻿namespace Ant.Core
+﻿namespace Ant.Extension
 {
     using System;
     using System.Linq;

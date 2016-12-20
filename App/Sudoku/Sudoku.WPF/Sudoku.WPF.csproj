@@ -115,7 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Library\Ant.Core\Ant.Core.csproj">
-      <Project>{2be22640-687d-4f0a-b3b7-e4660958d41f}</Project>
+      <Project>{952a735e-cebf-4e89-aef1-875acc7f3de7}</Project>
       <Name>Ant.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\SudokuHelper.Library\SudokuHelper.Library.csproj">

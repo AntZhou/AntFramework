@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Ant.Core")]
+[assembly: AssemblyTitle("SortAlgorithm")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Ant.Core")]
+[assembly: AssemblyProduct("SortAlgorithm")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("952a735e-cebf-4e89-aef1-875acc7f3de7")]
+[assembly: Guid("d75a7040-3583-4962-a99e-fc1bca6ae5ec")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

@@ -1,30 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace Sudoku.WPF
+﻿namespace Sudoku.WPF
 {
-    using Ant.Core;
+    using System.Linq;
+    using System.Windows;
+    using System.Windows.Controls;
+
+    using Ant.Extension;
 
     using SudokuHelper.Library.Model;
 
     /// <summary>
-    /// TestPage.xaml 的交互逻辑
+    ///     TestPage.xaml 的交互逻辑
     /// </summary>
     public partial class MainPage : Page
     {
-        private Chessboard chessboard ;
+        private Chessboard chessboard;
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -41,8 +31,6 @@ namespace Sudoku.WPF
             this.LoadCells();
         }
 
-        
-
         private void LoadChessboard()
         {
             this.chessboard = ChessboardFactory.CreateChessboard("#1");
@@ -50,11 +38,11 @@ namespace Sudoku.WPF
 
         private void LoadCells()
         {
-            for (int i = 1; i <= 9; i++)
+            for (var i = 1; i <= 9; i++)
             {
-                for (int j = 1; j <= 9; j++)
+                for (var j = 1; j <= 9; j++)
                 {
-                    CellView view = new CellView();
+                    var view = new CellView();
                     var viewModel = new CellViewModel();
                     var cell = this.chessboard.GetCell(i, j);
 
@@ -66,7 +54,7 @@ namespace Sudoku.WPF
 
                     cell.NumberChangedEvent += () => { viewModel.Number = cell.Number; };
                     cell.PossibleNumbersChangedEvent += () => { viewModel.PossibleNumbers = cell.PossibleNumbers; };
-                    view.InputNumberEvent += (v,e) => cell.SetNumber(e.Key.ToString().ToInt());
+                    view.InputNumberEvent += (v, e) => cell.SetNumber(e.Key.ToString().ToInt());
                     view.DataContext = viewModel;
                     this.BaseGrid.Children.Add(view);
                     view.SetValue(Grid.RowProperty, i - 1);
@@ -77,33 +65,33 @@ namespace Sudoku.WPF
 
         private void SetCellValueBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            int row = this.TextBoxRow.Text.ToInt();
-            int column = this.TextBoxColumn.Text.ToInt();
-            int number = this.TextBoxValue.Text.ToInt();
-            this.chessboard.GetCell(row,column).SetNumber(number);
+            var row = this.TextBoxRow.Text.ToInt();
+            var column = this.TextBoxColumn.Text.ToInt();
+            var number = this.TextBoxValue.Text.ToInt();
+            this.chessboard.GetCell(row, column).SetNumber(number);
         }
 
         private void GroupSinglePossibleCheckBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            int row = this.GroupRow.Text.ToInt();
-            int column = this.GroupColumn.Text.ToInt();
-            int square = this.GroupSquare.Text.ToInt();
+            var row = this.GroupRow.Text.ToInt();
+            var column = this.GroupColumn.Text.ToInt();
+            var square = this.GroupSquare.Text.ToInt();
             var group = this.chessboard.GetGroup(row, column, square);
             group.SingleNumberCheck();
         }
 
         private void GroupCollectionCheckBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            int row = this.GroupRow.Text.ToInt();
-            int column = this.GroupColumn.Text.ToInt();
-            int square = this.GroupSquare.Text.ToInt();
+            var row = this.GroupRow.Text.ToInt();
+            var column = this.GroupColumn.Text.ToInt();
+            var square = this.GroupSquare.Text.ToInt();
             var group = this.chessboard.GetGroup(row, column, square);
             group.CollectionCheck();
         }
 
         private void AllSingleCheckBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            this.chessboard.Groups.ToList().ForEach(l=>l.SingleNumberCheck());
+            this.chessboard.Groups.ToList().ForEach(l => l.SingleNumberCheck());
         }
 
         private void AllCollectionCheckBtn_OnClick(object sender, RoutedEventArgs e)
@@ -113,7 +101,7 @@ namespace Sudoku.WPF
 
         private void HiddenNumberCheckBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            this.chessboard.Groups.ToList().ForEach(l=>l.HiddenNumberCheck());
+            this.chessboard.Groups.ToList().ForEach(l => l.HiddenNumberCheck());
         }
 
         private void ClearBtn_OnClick(object sender, RoutedEventArgs e)
@@ -126,7 +114,5 @@ namespace Sudoku.WPF
         {
             this.chessboard.Clear();
         }
-
-       
     }
 }
