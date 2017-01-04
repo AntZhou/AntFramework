@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Ant.UnitTest
+﻿namespace Ant.UnitTest
 {
-    using System.Diagnostics;
+    using System;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     public class TestModel1
     {
@@ -24,18 +23,14 @@ namespace Ant.UnitTest
     }
 
     [TestClass]
-    public class OtherTest  
+    public class OtherTest
     {
         [TestMethod]
         public void TestMethod1()
         {
-            TestModel1 model = new TestModel1()
-                                   {
-                                       Name = "123"
-                                   };
+            var model = new TestModel1 { Name = "123" };
             model.Name = "12";
             var asd = "123" + model.Name;
-
         }
     }
 }
